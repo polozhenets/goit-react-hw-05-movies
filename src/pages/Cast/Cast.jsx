@@ -3,7 +3,7 @@ import s from './Cast.module.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMoviesCredits } from 'services/movies-api';
-
+import brockenImg from '../../images/broken_img.png'
 const Cast = () => {
   const { movieId } = useParams();
 
@@ -34,15 +34,7 @@ const Cast = () => {
         {cast.map(castItem => {
           return (
             <li key={castItem.id} className={s.castItem}>
-              <img
-                // src={
-                //   castItem.profile_path
-                //     ? `https://image.tmdb.org/t/p/w300${castItem.profile_path}`
-                //     : brockenImg
-                // }
-                src={`https://image.tmdb.org/t/p/w300${castItem.profile_path}`}
-                alt={`${castItem.name} portrait`}
-              />
+              <img src={castItem.profile_path ? `https://image.tmdb.org/t/p/w300${castItem.profile_path}`: brockenImg } alt='pop'/>
               <div>
                 <p>Name: {castItem.name}</p>
                 <p>Character: {castItem.character}</p>

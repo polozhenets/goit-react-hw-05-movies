@@ -1,12 +1,9 @@
-import s from './MoviesPage.module.css';
+import s from './Searchbar.module.css'
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const SearchBar = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
-
-  // const normalizedQuery = () =>
-  //   searchQuery.toLowerCase().trim().split(' ').join('+');
 
   const handleQuerySearch = e => {
     setSearchQuery(e.target.value.toLowerCase());
@@ -37,7 +34,6 @@ const SearchBar = ({ onSearch }) => {
         />
         <button
           type="submit"
-          //   onClick={handleInputClear}
           className={s.searchButton}
         >
           Search
